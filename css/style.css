@@ -49,7 +49,6 @@ nav {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 2rem;
 }
 
 #upload-area {
@@ -139,9 +138,6 @@ input[type="file"] {
   color: #ffffff;
 }
 
-#download-button {
-}
-
 #download-button a:hover {
   background-color: #43c7ff;
   border-radius: 0.75rem;
@@ -164,4 +160,20 @@ input[type="file"] {
   height: 15vh;
   background-color: #334c57;
   border-top: 2px solid #43c7ff;
+}
+
+@media screen and (max-width: 600px) {
+  #hero {
+    flex-direction: column;
+    justify-content: center;
+    align-self: center;
+    gap: 2rem;
+  }
+  #button-section {
+    height: auto;
+    gap: 2rem;
+  }
+  #output-section {
+    height: auto;
+  }
 }
