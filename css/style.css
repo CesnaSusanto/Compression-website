@@ -40,15 +40,54 @@ nav {
   justify-content: center;
   align-items: center;
   padding: 2rem;
-  gap: 5rem;
+  gap: 2rem;
 }
 
 #button-section {
-  height: 100vh;
+  width: 50%;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  gap: 1rem;
+}
+
+#quality-section {
+  margin: 20px 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+#quality-section {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.quality-label {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #43c7ff;
+  filter: drop-shadow(0px 0px 10px #43c7ff);
+}
+
+#quality-select {
+  margin: 10px auto;
+  padding: 5px;
+  font-size: 1em;
+  background-color: #43c7ff;
+  color: #fff;
+  filter: drop-shadow(0px 0px 10px #43c7ff);
+}
+
+#quality-select option {
+  background-color: #334c57;
+  color: #fff;
+}
+
+#quality-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #43c7ff;
 }
 
 #upload-area {
@@ -65,10 +104,7 @@ nav {
 #upload-area:hover {
   transition: 0.3s;
   border: solid 0.15rem #ffffff;
-}
-
-#upload-area:hover .upload-info {
-  padding: 2.75rem;
+  transform: scale(1.1);
 }
 
 #upload-area input {
@@ -97,6 +133,48 @@ input[type="file"] {
   margin: 0px 0;
 }
 
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  display: none;
+  /* Initially hidden */
+}
+
+.spinner {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+.loading p {
+  font-family: "Pixelify Sans", sans-serif;
+  font-size: 2.5vw;
+  color: #43c7ff;
+  margin-left: 20px;
+  filter: drop-shadow(0px 0px 10px #43c7ff);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
 #output {
   display: none;
   justify-content: center;
@@ -104,11 +182,9 @@ input[type="file"] {
 }
 
 #output-section {
-  width: 70%;
-  height: 100vh;
   display: flex;
-  align-items: center;
-  justify-content: center;
+  width: 100%;
+  height: auto;
 }
 
 #output-section img {
@@ -119,6 +195,7 @@ input[type="file"] {
 
 .file-output {
   width: 100%;
+  height: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -157,23 +234,126 @@ input[type="file"] {
 }
 
 #footer {
-  height: 15vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 2rem;
   background-color: #334c57;
+  color: #ffffff;
   border-top: 2px solid #43c7ff;
+  filter: drop-shadow(0px 0px 10px #43c7ff);
+}
+
+/* @media screen and (max-width: 1024px) {
+  #button-section {
+    width: 50%;
+  }
+
+  #output-section {
+    width: 100%;
+    height: auto;
+  }
+} */
+
+@media screen and (max-width: 1024px) {
+  #hero {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+  #button-section {
+  }
+
+  #quality-section {
+    margin: 20px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #quality-select {
+    width: 100%;
+    margin: 10px auto;
+    padding: 5px;
+    font-size: 1em;
+    background-color: #43c7ff;
+    color: #fff;
+    filter: drop-shadow(0px 0px 10px #43c7ff);
+  }
+
+  #upload-area {
+    width: 100%;
+  }
+
+  .upload-info {
+    color: #ffffff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    padding: 2rem;
+    font-size: 1rem;
+    gap: 20px;
+    transition: 0.3s;
+  }
 }
 
 @media screen and (max-width: 600px) {
   #hero {
-    flex-direction: column;
-    justify-content: center;
-    align-self: center;
+    display: flex;
+    height: auto;
     gap: 2rem;
   }
+
+  #button-section {
+    width: 100%;
+  }
+
+  #quality-section {
+    width: 100%;
+    margin: 20px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #quality-select {
+    width: 100%;
+    margin: 10px auto;
+    padding: 5px;
+    font-size: 1em;
+    background-color: #43c7ff;
+    color: #fff;
+    filter: drop-shadow(0px 0px 10px #43c7ff);
+  }
+
+  #upload-area {
+    width: 100%;
+  }
+
+  .upload-info {
+    color: #ffffff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    padding: 2rem;
+    font-size: 1rem;
+    gap: 20px;
+    transition: 0.3s;
+  }
+
   #button-section {
     height: auto;
     gap: 2rem;
   }
+
   #output-section {
+    width: 100%;
     height: auto;
   }
 }
