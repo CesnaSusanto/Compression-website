@@ -1,0 +1,356 @@
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #14191b;
+  width: 100%;
+  height: 100vh;
+  font-family: "poppins", sans-serif;
+}
+
+nav {
+  width: 100%;
+  height: 140px;
+  display: flex;
+  color: #ffffff;
+  font-family: "Pixelify Sans", sans-serif;
+  background-color: #334c57;
+  align-items: center;
+  justify-content: center;
+  border-bottom: solid 2px #43c7ff;
+  filter: drop-shadow(0px 0px 10px #43c7ff);
+}
+
+.logo {
+  display: flex;
+  font-size: 2rem;
+}
+
+#hero {
+  width: 100%;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem;
+  gap: 2rem;
+}
+
+#button-section {
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+}
+
+#quality-section {
+  margin: 20px 0;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+}
+
+#quality-section {
+  margin: 20px 0;
+  text-align: center;
+}
+
+.quality-label {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: #43c7ff;
+  filter: drop-shadow(0px 0px 10px #43c7ff);
+}
+
+#quality-select {
+  margin: 10px auto;
+  padding: 5px;
+  font-size: 1em;
+  background-color: #43c7ff;
+  color: #fff;
+  filter: drop-shadow(0px 0px 10px #43c7ff);
+}
+
+#quality-select option {
+  background-color: #334c57;
+  color: #fff;
+}
+
+#quality-select:focus {
+  outline: none;
+  box-shadow: 0 0 0 2px #43c7ff;
+}
+
+#upload-area {
+  background-color: #9e9e9e54;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 10px;
+  border: dashed 0.15rem #ffffff;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+#upload-area:hover {
+  transition: 0.3s;
+  border: solid 0.15rem #ffffff;
+  transform: scale(1.1);
+}
+
+#upload-area input {
+  cursor: pointer;
+}
+
+#upload-area img {
+  height: 2rem;
+  transition: 0.2s;
+}
+
+.upload-info {
+  color: #ffffff;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  padding: 2rem;
+  font-size: 1em;
+  gap: 20px;
+  transition: 0.3s;
+}
+
+input[type="file"] {
+  margin: 0px 0;
+}
+
+#loading {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  display: none;
+  /* Initially hidden */
+}
+
+.spinner {
+  border: 16px solid #f3f3f3;
+  border-top: 16px solid #3498db;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  animation: spin 2s linear infinite;
+}
+
+.loading p {
+  font-family: "Pixelify Sans", sans-serif;
+  font-size: 2.5vw;
+  color: #43c7ff;
+  margin-left: 20px;
+  filter: drop-shadow(0px 0px 10px #43c7ff);
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+#output {
+  display: none;
+  justify-content: center;
+  align-items: center;
+}
+
+#output-section {
+  display: flex;
+  width: 100%;
+  height: auto;
+}
+
+#output-section img {
+  max-height: 80vh;
+  height: 100%;
+  max-width: 100%;
+}
+
+.file-output {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#preview {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 60vh;
+  background-color: #9e9e9e54;
+  border-radius: 1rem;
+}
+
+.preview-info {
+  color: #ffffff;
+}
+
+#download-button a:hover {
+  background-color: #43c7ff;
+  border-radius: 0.75rem;
+  display: none;
+  color: #ffffff;
+}
+
+#download-button a {
+  text-decoration: none;
+  color: #43c7ff;
+  display: flex;
+  padding: 1.5rem;
+  background-color: #ffffff00;
+  border: solid 2px #43c7ff;
+  transition: 0.2s;
+  border-radius: 0.75rem;
+}
+
+#footer {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  padding: 2rem;
+  gap: 2rem;
+  background-color: #334c57;
+  color: #ffffff;
+  border-top: 2px solid #43c7ff;
+  filter: drop-shadow(0px 0px 10px #43c7ff);
+}
+
+/* @media screen and (max-width: 1024px) {
+  #button-section {
+    width: 50%;
+  }
+
+  #output-section {
+    width: 100%;
+    height: auto;
+  }
+} */
+
+@media screen and (max-width: 1024px) {
+  #hero {
+    display: flex;
+    flex-direction: column;
+    height: auto;
+  }
+  #quality-section {
+    margin: 20px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #quality-select {
+    width: 100%;
+    margin: 10px auto;
+    padding: 5px;
+    font-size: 1em;
+    background-color: #43c7ff;
+    color: #fff;
+    filter: drop-shadow(0px 0px 10px #43c7ff);
+  }
+
+  #upload-area {
+    width: 100%;
+  }
+
+  .upload-info {
+    color: #ffffff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    padding: 2rem;
+    font-size: 1rem;
+    gap: 20px;
+    transition: 0.3s;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  #hero {
+    display: flex;
+    height: auto;
+    gap: 2rem;
+  }
+
+  #button-section {
+    width: 100%;
+  }
+
+  #quality-section {
+    width: 100%;
+    margin: 20px 0;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+  }
+
+  #quality-select {
+    width: 100%;
+    margin: 10px auto;
+    padding: 5px;
+    font-size: 1em;
+    background-color: #43c7ff;
+    color: #fff;
+    filter: drop-shadow(0px 0px 10px #43c7ff);
+  }
+
+  #upload-area {
+    width: 100%;
+  }
+
+  .upload-info {
+    color: #ffffff;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: row;
+    padding: 2rem;
+    font-size: 1rem;
+    gap: 20px;
+    transition: 0.3s;
+  }
+
+  #button-section {
+    height: auto;
+    gap: 2rem;
+  }
+
+  #output-section {
+    width: 100%;
+    height: auto;
+  }
+}
